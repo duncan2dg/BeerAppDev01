@@ -1,0 +1,16 @@
+/*
+@import '~bootstrap/dist/css/bootstrap.min.css';
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }*/
+
+/*
+    AVAILABLE THEMES;
+    deeppurple-amber.css
+    indigo-pink.css
+    pink-bluegrey.css
+    purple-green.css
+*/
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+body {
+    margin: 0;
+  }

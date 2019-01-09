@@ -1,0 +1,50 @@
+<div class="example-container mat-elevation-z8">
+    <div class="example-loading-shade"
+         *ngIf="isLoadingResults">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <div class="button-row">
+      <a mat-flat-button color="primary" [routerLink]="['/beers']"><mat-icon>list</mat-icon></a>
+    </div>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title><h2>{{beer.company}}</h2></mat-card-title>
+        <mat-card-subtitle>{{beer.description}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <dl>
+            <dt>Ingredients:</dt>
+            <dd>{{beer.ingredients}}</dd>
+        </dl>         
+        <dl>
+          <dt>Strength:</dt>
+          <dd>{{beer.strength}}%</dd>
+        </dl>
+        <dl>
+          <dt>Country:</dt>
+          <dd>{{beer.countryOfOrigin}}</dd>
+        </dl>
+        <dl>
+            <dt>Style:</dt>
+            <dd>{{beer.style}}</dd>
+        </dl>
+        <dl>
+            <dt>Bottle size:</dt>
+            <dd>{{beer.size}}ml</dd>
+        </dl>   
+        <dl>
+            <dt>Bottle colour:</dt>
+            <dd>{{beer.colourOfBottle}}</dd>
+        </dl> 
+        <dl>
+            <dt>Rating:</dt>
+            <dd>{{beer.rating}}/5</dd>
+        </dl>                     
+               
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-flat-button color="primary" [routerLink]="['/beer-edit', beer.id]"><mat-icon>edit</mat-icon></a>
+        <a mat-flat-button color="warn" (click)="deleteBeer(beer.id)"><mat-icon>delete</mat-icon></a>
+      </mat-card-actions>
+    </mat-card>
+  </div>

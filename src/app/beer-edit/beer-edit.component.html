@@ -1,0 +1,97 @@
+<div class="example-container mat-elevation-z8">
+    <div class="example-loading-shade"
+         *ngIf="isLoadingResults">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <div class="button-row">
+      <a mat-flat-button color="primary" (click)="beerDetails()"><mat-icon>info</mat-icon></a>
+    </div>
+    <mat-card class="example-card">
+      <form [formGroup]="beerForm" (ngSubmit)="onFormSubmit(beerForm.value)">
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Beer company" formControlName="company"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!beerForm.get('company').valid && beerForm.get('company').touched">Please enter Beer company</span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Beer Desc" formControlName="description"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!beerForm.get('description').valid && beerForm.get('description').touched">Please enter Beer Description</span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Beer Country" formControlName="countryOfOrigin"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!beerForm.get('countryOfOrigin').valid && beerForm.get('countryOfOrigin').touched">Please enter country</span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Beer Strength" formControlName="strength"
+                   [errorStateMatcher]="matcher">
+            <mat-error>
+              <span *ngIf="!beerForm.get('strength').valid && beerForm.get('strength').touched">Please enter a strength</span>
+            </mat-error>
+          </mat-form-field>        
+
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Beer Style" formControlName="style"
+                    [errorStateMatcher]="matcher">
+            <mat-error>
+              <span *ngIf="!beerForm.get('style').valid && beerForm.get('style').touched">Please enter style</span>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Beer Ingredients" formControlName="ingredients"
+                    [errorStateMatcher]="matcher">
+            <mat-error>
+              <span *ngIf="!beerForm.get('ingredients').valid && beerForm.get('ingredients').touched">Please enter ingredients</span>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Best Before Date" formControlName="bestBeforeDate"
+                    [errorStateMatcher]="matcher">
+            <mat-error>
+              <span *ngIf="!beerForm.get('bestBeforeDate').valid && beerForm.get('bestBeforeDate').touched">Please enter best before date</span>
+            </mat-error>
+          </mat-form-field>  
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Beer Size" formControlName="size"
+                    [errorStateMatcher]="matcher">
+            <mat-error>
+              <span *ngIf="!beerForm.get('size').valid && beerForm.get('size').touched">Please enter size</span>
+            </mat-error>
+          </mat-form-field>  
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Bottle colour" formControlName="colourOfBottle"
+                    [errorStateMatcher]="matcher">
+            <mat-error>
+              <span *ngIf="!beerForm.get('colourOfBottle').valid && beerForm.get('colourOfBottle').touched">Please enter a bottle colour</span>
+            </mat-error>
+          </mat-form-field>                
+
+          <mat-form-field class="example-full-width">
+              <input matInput placeholder="Beer rating" formControlName="rating"
+                     [errorStateMatcher]="matcher">
+              <mat-error>
+                <span *ngIf="!beerForm.get('rating').valid && beerForm.get('rating').touched">Please enter a rating</span>
+              </mat-error>
+            </mat-form-field>
+
+        <div class="button-row">
+          <button type="submit" [disabled]="!beerForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon></button>
+        </div>
+      </form>
+    </mat-card>
+  </div>

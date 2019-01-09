@@ -1,0 +1,169 @@
+<!--
+<nav class="navbar navbar-expand-lg navbar-inverse">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+    <nav class="navbar">
+        <ul class="nav">
+            <li class="nav-item">        
+                <a routerLink="/home">Home</a> |&nbsp;  
+            </li>
+            <li class="nav-item">        
+                <a routerLink="/add">Add new beer</a> |&nbsp;  
+                </li>            
+            <li class="nav-item">
+                <a routerLink="/edit">Edit a beer</a> |&nbsp;
+            </li>
+            <li class="nav-item">
+                <a routerLink="/search">Search for a beer</a> 
+            </li>
+        </ul>
+    </nav>-->
+    
+    
+    <mat-sidenav-container>
+        <mat-sidenav  #sidenav role="navigation">
+         <mat-nav-list>
+          <a mat-list-item>
+            <mat-icon class="icon">input</mat-icon>
+            <span class="label">Login</span>
+          </a>
+          <a mat-list-item>
+            <mat-icon class="icon">home</mat-icon>  
+              <span class="label">Home</span>
+          </a>
+          <a mat-list-item>
+            <mat-icon class="icon">dashboard</mat-icon>  
+            <span class="label">Dashboard</span>
+          </a>
+          <a  mat-list-item type="button">
+            <mat-icon class="icon">input</mat-icon>
+            <span class="label">LogOut</span>
+          </a>  
+          </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+          <mat-toolbar color="primary">
+           <div fxHide.gt-xs>
+             <button mat-icon-button>
+              <mat-icon>menu</mat-icon>
+            </button>
+          </div>
+           <div>
+             <a>
+                Das Brauhaus
+             </a>
+           </div>
+           <div fxFlex fxLayout fxLayoutAlign="flex-end"  fxHide.xs>
+              <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+                  <li>
+                      <a>
+                        <mat-icon class="icon">input</mat-icon>  
+                        <span  class="label">Login</span>
+                       </a>
+                  </li>
+                  <li>
+                    <a >
+                        <mat-icon class="icon">home</mat-icon>
+                        <span class="label">Home</span>
+                    </a>
+                  </li>
+                  <li>
+                      <a>
+                          <mat-icon class="icon">dashboard</mat-icon>
+                          <span class="label">Dashboard</span>
+                      </a>
+                    </li>
+                  <li>
+                      <a>
+                        <mat-icon class="icon">input</mat-icon>
+                        <span class="label">LogOut</span>
+                       </a>
+                  </li>
+              </ul>
+           </div>
+          </mat-toolbar>
+          <main>
+          </main>
+        </mat-sidenav-content>
+      </mat-sidenav-container>    
+
+      <nav class="navbar">
+        <ul class="nav">
+            <li class="nav-item">        
+                <a routerLink="/beers">All Beers</a> |&nbsp;  
+            </li>
+            <li class="nav-item">        
+                <a routerLink="/beer-add">Add new beer</a> |&nbsp;  
+            </li>            
+
+
+        </ul>
+    </nav>  
+<router-outlet></router-outlet>
+
+
+<!--
+<div>
+<button (click)="getBeerData()">Get Beer Selection</button>
+<button (click)="clearGrid()">Clear</button>
+</div>
+-->
+
+<!--
+    To include these files the must like so it must
+    START with app THEN whatever the filename is called;
+    e.g;
+    beer-option-ddl.component.ts
+    so TAG would be <app-beer-option-ddl>
+
+<app-beer-option-ddl></app-beer-option-ddl>
+-->
+<!--<app-filter-action [beerGrid]="beerGrid"></app-filter-action>
+
+<app-beer-grid></app-beer-grid>-->
+
+<!--TODO: move this to it's own componet folder/file-->
+
+<!--Display Results from main default GET ALL
+<div #loadDataGrid [style.visibility]="setGridVisibility?'visible':'hidden'">
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <td scope="col" hidden>Id</td>
+            <th scope="col">Company</th>
+            <th scope="col">Description</th>
+            <th scope="col">Country</th>
+            <th scope="col">Style</th>
+            <th scope="col">Strength</th>
+            <th scope="col">Ingredients</th>
+            <th scope="col">Bottle colour</th>
+            <td scope="col">Rating</td>
+            <td scope="col">&nbsp;</td>
+        </tr>
+    </thead>
+
+    
+
+    <tbody></tbody>
+        <tr *ngFor="let beer of outputBeers">
+            <td hidden>{{beer.id}}</td>
+            
+            <td>{{beer.company}}</td>    
+            <td>{{beer.description}}</td>
+            <td>{{beer.countryOfOrigin}}</td>
+            <td>{{beer.Style}}</td>
+            <td>{{beer.strength}}</td>
+            <td>{{beer.ingredients}}</td>
+            <td>{{beer.colourOfBottle}}</td>
+            <td>{{beer.rating}}</td>
+            <td><button (click)="editBeerSelection(beer)">Edit</button></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>-->
+
+
